@@ -1,0 +1,6 @@
+times <- read.table(pipe("pbpaste"), sep="\t", col.names=c("count", "date"))
+times$dt <- as.POSIXct(strptime(times$date, "%Y-%m-%d %H:%M:%S"))
+times.lm <- lm(dt ~ count, data=times)
+library(ggplot2)
+print(qplot(dt, count, data=times, geom=c("line", "smooth")))
+print(as.POSIXct(predict(times.lm, data.frame(count=finalCount)), origin="1970-01-01"))
