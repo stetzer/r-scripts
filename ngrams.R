@@ -7,4 +7,4 @@ grams <- function(vec, size) {
 
 #Example usage:
 #unigrams <- grams(c("what is the capital of china", "what is the biggest city in china"), 1)
-#bigrams <- grams(c("what is the capital of china", "what is the biggest city in china"), 1)
+#bigrams <- grams(c("what is the capital of china", "what is the biggest city in china"), 2)
