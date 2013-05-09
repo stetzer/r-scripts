@@ -13,7 +13,7 @@ legoRemaining <- function(n, seen) {
   while(length(unique(figs)) < n) {
     figs <- c(figs, ceiling(runif(1, 0, n)))
   }
-  return(length(figs))
+  return(length(figs)-seen)
 }
 # Run 1k trials to approximate how many purchases left to complete the collection like so:
 #mean(replicate(1000, legoRemaining(16, 15)))
